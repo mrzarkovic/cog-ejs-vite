@@ -1,0 +1,21 @@
+<%- include('templates'); -%>
+
+<h1 class="text-4xl font-bold pb-8">Tic Tac Cog</h1>
+<div class="flex -mx-2">
+    <div class="px-2">
+        <board-c></board-c>
+    </div>
+    <div class="px-2">
+        <ol>
+            {{ history.map( (squares, move) => `
+                <move-c data-click="jumpTo(${move})">
+                    ${move > 0 ? "Go to move #" + move : "Go to game start"}
+                </move-c>
+            `) }}
+        </ol>
+    </div>
+</div>
+
+</div>
+<script type="module" src="components/tic-tac-toe/index.ts"></script>
+</body>
